@@ -6,5 +6,6 @@ namespace EntidadesNegocio
 {
     class Medico
     {
+        public int MyProperty { get; set; }
     }
 }
