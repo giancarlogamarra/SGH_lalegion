@@ -11,6 +11,10 @@ namespace EntidadesNegocio
             this.Dni = dni;
             this.Nombre = nombre;
             this.Apellido = apellido;
+
+
+
+
         }
     }
 }
