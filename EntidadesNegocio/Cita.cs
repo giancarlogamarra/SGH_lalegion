@@ -16,9 +16,6 @@ namespace EntidadesNegocio
             this.tipocita = tipocita;
             this.estadocita = estadocita;
 
-
-
-
         }
     }
 }
