@@ -6,5 +6,6 @@ namespace EntidadesNegocio
 {
     class CIta
     {
+        public int MyProperty { get; set; }
     }
 }
