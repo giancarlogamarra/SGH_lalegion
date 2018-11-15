@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Entities
 {
-    class medicamento
+    public class medicamento
     {
     }
 }

@@ -7,35 +7,30 @@ namespace LogicaNegocios
 {
     public class PacienteBL
     {
-        public static List<persona> Listpacientes;
+        public static List<paciente> Listpacientes;
 
-        public List<persona> GetPacientes()
+        public List<paciente> GetPacientes()
         {
             string path = PacientesDAL.ConexionPacientes();
             string[] lines = System.IO.File.ReadAllLines($"{path}\\BD\\Pacientes.txt");
-            Listpacientes = new List<persona>();
+            Listpacientes = new List<paciente>();
             foreach (var item in lines)
             {
-                string Dni = item.Split(',')[0];
-                string Nombre = item.Split(',')[1];
-                string Apellido = item.Split(',')[2];
-                persona p = new persona(Dni, Nombre, Apellido);
+                string tipo= item.Split(',')[0];
+                string Dni = item.Split(',')[1];
+                string Nombre = item.Split(',')[2];
+                string Apellido = item.Split(',')[3];
+                string sexo = item.Split(',')[4];
+                string estadocivil = item.Split(',')[5];
+                paciente p = new paciente(tipo,Dni, Nombre, Apellido,sexo, estadocivil);
                 Listpacientes.Add(p);
             }
             return Listpacientes;
         }
 
 
-
-
-
-
-
-
-
-
-        public void UpdatePaciente(string dni, persona paciente) {
-            foreach (persona item in Listpacientes)
+        public void UpdatePaciente(string dni, paciente paciente) {
+            foreach (paciente item in Listpacientes)
             {
                 if (item.Dni == dni)
                 {
@@ -45,7 +40,7 @@ namespace LogicaNegocios
             }
             UpdateDataBase();
         }
-        public void InsertPaciente(persona paciente) {
+        public void InsertPaciente(paciente paciente) {
             Listpacientes.Add(paciente);
             UpdateDataBase();
         }

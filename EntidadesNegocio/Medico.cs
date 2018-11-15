@@ -4,10 +4,11 @@ using System.Text;
 
 namespace EntidadesNegocio
 {
-    class Medico:persona
+     public class Medico:persona
     {
         public string CMP { get; set; }
-        
+      
+
 
         public Medico(string cmp, string dni, string nombre, string apellido, string sexo, string estadocivil) 
                         :base( dni,  nombre,  apellido,  sexo,  estadocivil)
